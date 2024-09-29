@@ -50,7 +50,7 @@ function Home() {
     try {
       const result = await axios.post(endpoint, { prompt });
       const botMessage = {
-        text: JSON.stringify(result.data.response, null, 2),
+        text: result.data.response,
         type: 'bot',
       };
       setMessages((prevMessages) => [...prevMessages, botMessage]);
